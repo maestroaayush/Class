@@ -1,0 +1,117 @@
+- Git installed
+
+3
+
+a. developer nepal
+b. developer Aus
+c. Developer US
+
+
+19th July				23rd July		25th July			30th July
+	* ------------------->
+A. 	* --------------------> Module {index.php}
+B.  * ---------------------------------> Module 2{index1.php}
+C.	* ------------------------------------------------------> Module 3{index2.php}	
+
+copy 	=> paste A
+		=> Paste B 				=> Module 1 & 3
+		=> Paste C
+
+
+// Repository Providers
+gitlab
+github
+bitbucket
+
+
+
+a. Fresh Project
+	
+	owner 	=> repo create
+			=> Push master Branch
+
+	Members =>	clone the project
+			=>	Copy exact copy of the git repo
+
+			=> Develop code 
+			=> Staging code
+				-> Add and commit 
+
+			1. If no one has pushed the code in git till now,
+				=> First developer to complete the code can directly push the code now
+
+			2. If someone has already pushed the code in the repo
+				=> First, pull the code 
+				=> Merge the code from repo to your local changes
+					-> While merging the code, there might be some conflicts
+					-> Resolve Conflict 
+					-> After conflict resolution, 
+					repeat,
+						-> staging process, add and commit 
+				=> After merging push the code. 
+
+b. Project already Exist in local machine
+	=> Connect your local project with Git Repo
+
+	=> Stage your codes to push
+		-> add and commit 
+
+	=> push the code
+
+
+c. Already existing Repo and local code
+	=> connect your local project with git Repository
+
+	=> Stage your code 
+		-> add and commit
+
+	=> Pull the code from repo
+		=> Merge conflict may arise
+			=> Resolve the merge conflicts
+				=> After resolution, stage the code
+
+	=> Push the code
+
+
+
+
+commands
+=> To find the stage of code,
+	- git status
+
+=> Git initializaion in non-git directory run once
+	- git init
+
+=> Connect with the repo, once 
+	- git remote add <name> <url>
+	e.g. 
+		git remote add origin https://gitlab.com/php-800/php-all.git
+
+=> Stage codes
+	=> Add the changes to commit 
+		- git add .
+
+	=> Commit the changes
+		- git commit -m "<Your Message>"
+
+=> To Push the code in git remote
+	- git push <remote> <branch_name>
+	e.g. 
+		git push origin master
+
+=> To list all the branches
+	- git branch
+
+=> To pull the code 
+	- git pull <remote> <branch_name>
+	e.g.
+		git pull origin master
+
+
+----------------------------------------------------------------------------------
+=> To create a new branch and switch to it,
+	- git checkout -b <branch_name>
+
+
+=> To clone any repo,
+	- git clone <remoteUrl>

@@ -1,0 +1,116 @@
+a. File
+	- Less Secure 
+	- Faster 
+	- Read or Write -> append
+	- .json => JSON is universal data format
+	- Text, String
+
+JSON => JavaScript Object Notation	
+	
+	- is a string for php, 
+	- pre-formatted string
+
+
+	// Single 
+	// Indexive 
+
+	$user = array(
+		"Sandesh Bhattarai",
+		"Kathmandu",
+		"trainer.sandesh@broadwayinfosys.edu.np",
+		"+977 9802111635"
+	);
+
+	$json_string = json_encode($user);	//	[... , ...]
+
+	["Sandesh Bhattarai", "Kathmandu", "trainer.sandesh@broadwayinfosys.edu.np", "+977 9802111635"]
+
+
+
+
+	// Single 
+	// Associative Array 
+
+	$user = array(
+		'name' => "Sandesh Bhattarai",
+		'address' => "Kathmandu",
+		'email' => "trainer.sandesh@broadwayinfosys.edu.np",
+		'phone' => "+977 9802111635"
+	);
+
+	$json_string = json_encode($user);			{"key":"value", "key1":"value"}
+	
+	{
+		"name": "Sandesh Bhattarai", 
+		"address": Kathmandu", 
+		"email": "trainer.sandesh@broadwayinfosys.edu.np", 
+		"phone": "+977 9802111635"
+	}
+
+
+
+
+
+
+	// Multi Dimensional 
+	// Indexive 
+
+	$user = array(
+			array(
+				"Sandesh Bhattarai",
+				"Kathmandu",
+				"trainer.sandesh@broadwayinfosys.edu.np",
+				"+977 9802111635"
+			),
+			array(
+				"Sandesh Bhattarai",
+				"Kathmandu",
+				"trainer.sandesh@broadwayinfosys.edu.np",
+				"+977 9802111635"
+			)
+
+	);
+
+	$json_string = json_encode($user);	//	[ [ele, ele, ele], [], []]
+
+	[
+		["Sandesh Bhattarai", "Kathmandu", "trainer.sandesh@broadwayinfosys.edu.np", "+977 9802111635"],
+		["Sandesh Bhattarai", "Kathmandu", "trainer.sandesh@broadwayinfosys.edu.np", "+977 9802111635"]
+	]
+
+
+
+	// Multi Dimensional 
+	// Associative Array 
+
+	$user = array(
+			array(
+				'name' => "Sandesh Bhattarai",
+				'address' => "Kathmandu",
+				'email' => "trainer.sandesh@broadwayinfosys.edu.np",
+				'phone' => "+977 9802111635"
+			),
+			array(
+				'name' => "Sandesh Bhattarai",
+				'address' => "Kathmandu",
+				'email' => "trainer.sandesh@broadwayinfosys.edu.np",
+				'phone' => "+977 9802111635"
+			)
+	);
+
+	$json_string = json_encode($user);				// [ {}, {}, {} ]
+	
+	[
+		{
+			"name": "Sandesh Bhattarai", 
+			"address": Kathmandu", 
+			"email": "trainer.sandesh@broadwayinfosys.edu.np", 
+			"phone": "+977 9802111635"
+		},
+		{
+			"name": "Sandesh Bhattarai", 
+			"address": Kathmandu", 
+			"email": "trainer.sandesh@broadwayinfosys.edu.np", 
+			"phone": "+977 9802111635"
+		}
+	]

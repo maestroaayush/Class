@@ -1,0 +1,77 @@
+a. Form
+
+b. API
+	Application Programming Interface
+
+
+
+a. Get		=> data always transfer through url, limitation => 2048
+
+b. Post		=> transfer invisibly, url
+
+
+every request goes through url
+
+
+c. Put/patch
+d. Delete
+
+
+
+Form => HTML elements
+	attributes => 
+		action 		=> The url where to submit form, default => Submitted on the url	
+		method		=> get, Post   			default => get
+
+		enctype		=> Only have to put when your form has file upload option, multipart/form-data
+					default => file will not be uploaded
+
+
+	Elements,
+		input type
+			text 		=> Single line statement, 255 chars		default
+			email		=> text@text format string
+			password	=> User Password
+			number		=> integer, float, number values
+			date		=> Open a calendar, Y-m-d, dd/mm/YYYY
+			time		=> clock, H:i
+			url			=> http://, https:// start strings
+			checkbox	=> square shape box, multiple options present and can select Multiple
+			radio		=> Multiple options but single selection
+			range		=> range selector
+			file		=> File Uploader 
+			hidden		=> That field will be submitted with the form but not visible in browser
+			submit 		=> Create a Submit button , post your form
+			reset 		=> Create a reset button, resets a form
+			button		=> Create a simple clickable button, does not perform anything
+			tel			=> telephone number validation, Safari
+
+			+977 9874563210
+			00977 9874563210
+			(977) 9874563210
+			(977) (987) (456) (3210)
+			+977 987 654 3210
+
+		select-option
+			select
+				option 
+					attribute => value
+					selected
+
+
+		textarea
+			rows => integer value, no. of rows visible in form
+			cols => integer, no. of columns visible in form
+
+
+		button
+
+			paired tag, 
+				type => submit, reset, button
+
+
+Super Global Variables to receive Form Data => Every super global variable is Associative Array type
+
+	a. $_GET 		=> Get method or URL data 
+	b. $_POST		=> Receives Post method data 
+	c. $_REQUEST 	=> Receives get or post both methods

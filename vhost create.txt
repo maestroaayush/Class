@@ -1,0 +1,97 @@
+1. Go to your apache directory
+
+	c:/xampp/apache/conf/extra/httpd-vhost.conf
+
+2. Remove ## from NameVirtualHost *:80
+
+3. Copy 
+	##<VirtualHost *:80>
+	    ##ServerAdmin postmaster@dummy-host.localhost
+	    ##DocumentRoot "C:/xampp/htdocs/dummy-host.localhost"
+	    ##ServerName dummy-host.localhost
+	    ##ServerAlias www.dummy-host.localhost
+	    ##ErrorLog "logs/dummy-host.localhost-error.log"
+	    ##CustomLog "logs/dummy-host.localhost-access.log" combined
+	##</VirtualHost>
+
+	code and paste it at the end of the file
+
+4. Remove all ## from the pasted code
+	
+	<VirtualHost *:80>
+	    ServerAdmin postmaster@dummy-host.localhost
+	    DocumentRoot "C:/xampp/htdocs/dummy-host.localhost"
+	    ServerName dummy-host.localhost
+	    ServerAlias www.dummy-host.localhost
+	    ErrorLog "logs/dummy-host.localhost-error.log"
+	    CustomLog "logs/dummy-host.localhost-access.log" combined
+	</VirtualHost>
+
+5. Replace *:80 form <VirtualHost *:80> with your domain name
+	<VirtualHost *:80>
+		=>
+		<VirtualHost sms.loc>
+
+6. Remove ServerAdmin line
+	<VirtualHost sms.loc>
+	    DocumentRoot "C:/xampp/htdocs/dummy-host.localhost"
+	    ServerName dummy-host.localhost
+	    ServerAlias www.dummy-host.localhost
+	    ErrorLog "logs/dummy-host.localhost-error.log"
+	    CustomLog "logs/dummy-host.localhost-access.log" combined
+	</VirtualHost>
+
+7. Set DocumentRoot for your project directory
+	<VirtualHost sms.loc>
+	    DocumentRoot "C:/xampp/htdocs/<your project dir>"
+	    ServerName dummy-host.localhost
+	    ServerAlias www.dummy-host.localhost
+	    ErrorLog "logs/dummy-host.localhost-error.log"
+	    CustomLog "logs/dummy-host.localhost-access.log" combined
+	</VirtualHost>
+
+8. Replace ServerName with your domain name
+	<VirtualHost sms.loc>
+	    DocumentRoot "C:/xampp/htdocs/<your project dir>"
+	    ServerName sms.loc
+	    ServerAlias www.sms.loc
+	    ErrorLog "logs/dummy-host.localhost-error.log"
+	    CustomLog "logs/dummy-host.localhost-access.log" combined
+	</VirtualHost>
+
+9. Remove CustomLog and ErrorLog
+	<VirtualHost sms.loc>
+	    DocumentRoot "C:/xampp/htdocs/<your project dir>"
+	    ServerName sms.loc
+	    ServerAlias www.sms.loc
+	</VirtualHost>
+
+10. Restart apache
+11. Edit Host file
+	
+	C:/windows/system32/drivers/etc/hosts
+	
+	=> You need to open notepad in admininstraion permission
+
+		windows button of your keyboard, click on that,
+		search for notepad
+		right click on your notepad icon
+		click on Run as Administrator
+
+12. Add the following line at the end of your file
+	
+	127.0.0.1 sms.loc
+	# 127.0.0.1 
+
+13. restart apache
+
+.com, .dev, .app, .sandesh
+
+// facebook.com
+
+
+
+browser domain name => ROUTER => ISP => IP
+
+
+Browser => IP => 127.0.0.1  

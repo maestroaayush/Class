@@ -1,0 +1,224 @@
+* Dataware House
+
+-> Data mining
+-> Types
+	* Non-RDBMS
+	* RDBMS
+
+
+
+
+orders
+-------------------
+
+order_id 		person_name		product_name 		entered_by
+---------------------------------------------------------------
+1				Ram 			Samsung S10 		Admin
+---------------------------------------------------------------
+2				ram 			samsung s10 		user
+---------------------------------------------------------------
+3 				Shyam 			iPhone Plus			user
+
+
+							||
+							|| 		Normalization
+							\/
+
+
+roles
+----------------
+id 			name
+----------------------
+1			Admin
+---------------------
+2 			seller
+-----------------------
+3 			buyer
+----------------------
+4 			executives
+
+
+users 									products 							orders
+---------								----------------------- 			-----------------------------
+id 			name 						id 			name 					id 			user_id 		product_id 		entered_by
+(int, 10, un) 																			(int, 10, un, index)
+-------------------						-------------------------			--------------------------------------------------------
+5			Ram	 						1 			Samsung S10 			1 			5				1 				3
+------------------ 						------------------------  			-------------------------------------------------------
+2 			Shyam 						2 			iPhone Plus  			2			5				1				4
+------------------ 															-------------------------------------------------------
+3 			Admin 															3			2				2				4
+------------------
+4			User
+
+
+
+
+
+Result 
+-------
+orders
+----------------------------
+id 				user 				product 					entered
+------------------------------------------------------------------------
+1 				Ram 				Samsung S10 				Admin
+------------------------------------------------------------------------
+2 				Ram 				Samsung S10 				User
+------------------------------------------------------------------------
+3 				Shyam				iPhone Plus 				User
+
+
+
+
+Database Server
+---------------------------
+a. Centeralized DB
+
+b. Distributed DB
+
+
+* MySQl - MariaDB
+
+* MSSQL - Microsoft
+
+* Oracle
+* Postgres, pgsql
+* SQLite
+
+
+// SQL => Structured Query Language
+
+
+Web app perform
+	
+	-> CRUD Operation
+		-> Create	
+			- Database
+				CREATE 
+				e.g. 
+					CREATE DATABASE db_name;
+
+			- Table
+				CREATE
+
+
+			- Data / Row
+				INSERT Query
+
+		-> Read
+			- SELECT 
+
+		-> Update
+			- Table
+				ALTER
+
+			- Data
+				UPDATE
+
+		-> Delete	
+			- Database
+				DROP
+
+			- Table
+				DROP
+
+			- Data
+				DELETE
+
+
+
+// name => Aplha numeric values only
+-> small letter
+-> seperator => _ use
+
+
+
+// Table 
+	=> data types in table
+	=> Keys 
+		- Primary Key
+		- Foreign Key
+
+	=> Index
+		- unique,
+		- index
+
+
+ => 
+
+ 		columns		columns	 
+-----------------------------
+Rows 	cell		cell 				=> One dataset
+-----------------------------
+Rows 	cell		cell				=> Second Dataset
+
+
+=> Data Type
+
+	a. Number	(signed or unsigned)
+		i. integer
+			- tinyint 	-> -128 - 127, 0-255, 1-256
+			- int 		-> -2147483648 - 2147483647
+			- bigint    - -9223372036854775808 to 9223372036854775807
+			
+		ii. floating point
+			- float
+				- 16
+			- double
+				-  
+
+	b. String
+		- varchar
+			- 1-255 chars
+			- short text, name, email adress
+		
+		- text
+			- 65535 chars
+			- simple para, about yourself, messages
+
+		- longtext
+			- 4294967295
+			- description, html editor content
+
+	c. Date and time
+		- date => YYYY-mm-dd, Y-m-d 
+		- time => h:i:s A, H:i:s
+		- datetime => Y-m-d H:i:s, 8 byte, 9999-12-31
+		- timestamp => Y-m-d H:i:s 4 byte, 2039-12-31
+		- year => Y
+
+	d. Enum
+		=> predefined dataset
+		e.g 
+			gender => male, female, other
+			days => Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+
+	e. Json
+		{}
+
+
+Primary Key
+	-> uniqually identify help
+	-> id column, integer or numeric
+	-> unique
+	-> Can have only one primary key
+		-> Might be a single column or combination of columns
+	-> Auto increment
+	-> Once deleted key, never insert new value
+
+
+Foreign key 
+	-> can be multiple columns
+	-> relate multiple tables link between tables
+	-> data type should be similar to primary key
+	-> 
+		-> On Update
+		-> on Delete
+
+			- Cascade => same operation
+			- SET NULL => Foreign key should store null value 
+			- No action => do not change Foreign key
+			- Restrict => untill foreign keys are settled, do not allow primary key to operate
+
+Unique => Unique identification 
+Index => 

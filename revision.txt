@@ -1,0 +1,150 @@
+Server 
+	Apache 
+		Xampp 
+		Wamp
+
+		Linux => Lamp Stack 
+
+Web 
+	a. Content Changing
+		- Static 
+		- Dynamic
+			- Frontend
+
+			- Backend( CMS )
+
+
+
+	b. Design Basis
+		- Responseiv
+		- non-responsive
+
+
+Dynamic Web
+Server Side Scripts
+	-> PHP, Mysql, python, Java Servlets
+
+Client Side Scripts
+	-> HTML, CSS, JavaScripts/jQuery
+
+
+HTML tags structure,
+CSS 
+PHP 
+	- Syntax
+	- Data 
+	- Operators
+		a. Arthimetic
+			- Mathematical Operators
+				+, -, * , /, %, ()
+		b. Increment or Decrements
+			++, --
+		c. Assignment Operators
+			+=, -=, =, *=, /=, %=, .= 
+		d. Comparision Operators
+			<, >, <=, >=, ==, ===, !=, <>
+		e. 	Logical Operators
+			&&, ||, !
+
+			$var = true;
+			!($var && !$var)	// false
+			!empty($var);	// true
+		f. String Operator
+			Concatination Operator
+				. 
+		g. Error Suppressor
+			@
+
+		h. Conditional Or Ternary Operator
+			($exp) ? ----- : ----
+
+
+			$x = 10;
+
+			if ($x > 10) 
+				Single Line statement
+			else 
+				Single Line statement
+
+		i. Spaceship Operator, 7
+			(2 <=> 1);		// 1
+			(1 <=> 2);		// -1
+			(1 <=> 1);		// 0
+Data Type
+	. String
+	. Numbers
+	. Array
+	. Object 
+	. null 
+	. boolean => true or false, 1 or 0
+		. integer
+		. float
+		. boolean
+		. json 
+
+Control Statements 
+	a. if
+	b. if-else
+	c. else-if
+	d. switch-case
+	e. Loop
+		i. while
+		ii. do-while
+		iii. for
+		iv. foreach
+
+
+
+if($exp){
+	// body
+} else {
+	// else body	
+}
+
+if($exp):
+	// body 
+else: 
+	// body
+endif;
+
+
+if($exp){
+	// body
+} else if($exp1){
+	// elseif body
+} elseif($exp2){
+	// elseif body
+} /* else {
+	// else 
+} */
+
+
+if($exp):
+	// body
+elseif($exp1):
+	// elseif body
+elseif($exp2):
+	// elseif body
+/* else:
+	// else 
+*/
+endif;
+
+
+switch($condition){
+	case ($condition ==1):
+		// body
+		break;
+	case 2:
+		// body
+		break;
+	default:
+		// 
+		contiunue;
+}
+// 
+
+
+// break; continue;
+
+
