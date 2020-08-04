@@ -79,6 +79,17 @@
 
 
 					<div class="form-group row">
+						<label for="" class="col-sm-12 col-md-3">User Type: </label>
+						<div class="col-sm-12 col-md-9">
+							<select name="role" required id="" class="form-control form-control-sm">
+								<option value="admin">Administrator</option>
+								<option value="user">User</option>
+							</select>
+						</div>
+					</div>
+
+
+					<div class="form-group row">
 						<label for="" class="col-sm-12 col-md-3">About Yourself: </label>
 						<div class="col-sm-12 col-md-9">
 							<textarea name="about" id="" rows="4" class="form-control form-control-sm" style="resize: none"></textarea>

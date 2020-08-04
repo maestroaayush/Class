@@ -83,16 +83,20 @@
 		90-81		=> ........ ORDER BY id DESC LIMIT 10,10
 		80-71		=> ........ ORDER BY id DESC LIMIT 20,10
 
+		// SQL 
+
+
 	*/
+		/*
+			$sql = "CREATE TABLE IF NOT EXISTS table_name (
+				column_defn
+				FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE
+			)";
 
+		$sql_1 = "ALTER TABLE tables ADD CONSTRAINT FK_UsersInfo FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE  ";
 
-
-
-
-
-
-
-
+		$query = mysqli_query($conn, $sql);
+		$query = mysqli_query($conn, $sql_1);*/
 
 
 
@@ -109,17 +113,117 @@
 		<div class="row">
 			<div class="col-12">
 				<h4 class="text-center">User List</h4>
+
+				<a href="form.php" class="btn btn-link">Add More User</a>
+				
 				<hr>
+
 				<table class="table table-hover table-sm">
 					<thead class="thead-dark">
 						<th>S.N</th>
 						<th>Name</th>
 						<th>Email</th>
-						<th>Address</th>
-						<th>Phone</th>
+						<th>Date of birth</th>
+						<th>Place of Birth</th>
+						<th>Language</th>
+						<th>Gender</th>
+						<th>Role id</th>
+						<th>Role</th>
+						<th>About</th>
+						<th>Actions</th>
 					</thead>
 					<tbody>
-						
+						<?php 
+							$sql = "SELECT * FROM users ORDER BY id DESC";
+
+							$sql = "SELECT * FROM users ORDER BY id DESC LIMIT 0, 5";
+							
+							$today = date("Y-m-d");
+							// $today_end = date("Y-m-d 23:59:59");
+							
+							/*$sql = "SELECT * FROM users 
+									WHERE 
+										created_at >= '".$today."'
+										AND 
+										created_at <= '".$today_end."'
+									ORDER BY id DESC";*/
+							$sql = "SELECT * FROM users 
+									WHERE 
+										DATE(created_at) = '".$today."'
+									ORDER BY id DESC";
+
+							$sql = "SELECT * FROM users WHERE role = 'user'";
+
+							$sql = "SELECT 
+										users.*, 
+										roles.name AS role_name 
+									FROM users
+									LEFT JOIN roles ON users.role_id = roles.id 
+									ORDER BY users.id DESC";
+
+
+							$sql = "SELECT 
+										*, 
+										(SELECT roles.name FROM roles WHERE roles.id = users.role_id) AS role_name
+									FROM users
+									ORDER BY id DESC";
+
+							/*echo $sql;
+							exit;*/
+
+							/*echo $sql;
+							exit;*/
+
+							// 2020-07-30 00:00:00 - 2020-07-30 23:59:59
+							// 2020-07-30 - 2020-07-30
+
+
+							$query = mysqli_query($conn, $sql);
+							if(!$query){
+								die(mysqli_error($conn));
+							}
+							if(mysqli_num_rows($query) > 0){
+								/*mysqli_fetch_assoc();
+								mysqli_fetch_all();*/
+								//$data = mysqli_fetch_assoc($query);
+
+								$data = mysqli_fetch_all($query, MYSQLI_ASSOC);
+								
+								foreach($data as $key => $row){
+								?>
+								<tr>
+									<td><?php echo $key+1 ?></td>
+									<td><?php echo $row['full_name'] ?></td>
+									<td><?php echo $row['email'] ?></td>
+									<td><?php echo $row['dob'] ?></td>
+									<td><?php echo $row['pob'] ?></td>
+									<td><?php echo $row['lang'] ?></td>
+									<td><?php echo $row['gender'] ?></td>
+									
+									<td><?php echo $row['role_name'] ?></td>
+									
+									<td><?php echo $row['role'] ?></td>
+									<td><?php echo $row['about_yourself'] ?></td>
+									<td>
+										<a href="" class="btn btn-success btn-sm" style="border-radius: 50%">
+											E
+										</a>
+										<a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm" style="border-radius: 50%">
+											D
+										</a>
+										<a href="detail.php?id=<?php echo $row['id'] ?>" class="btn btn-warning btn-sm" style="border-radius: 50%">
+											V
+										</a>
+									</td>
+								</tr>
+								<?php
+								}
+							} else {
+								echo "No data found.";
+							}
+
+
+						?>
 					</tbody>
 				</table>
 			</div>

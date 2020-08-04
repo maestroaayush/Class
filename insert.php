@@ -104,6 +104,7 @@
 					dob = '".$_POST['date_of_birth']."',
 
 					lang = '".$lang."',
+					role = '".$_POST['role']."',
 					
 					gender = '".$gender."',
 					pob = '".$place_of_birth."',
