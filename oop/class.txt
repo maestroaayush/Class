@@ -1,0 +1,33 @@
+- OOP 
+	=> Object oriented programming
+
+
+	Person 
+		=>
+			$pserson = array(
+				'name' => "Sandesh Bhattarai",
+				'address' => "Kathmandu Nepal"
+			);
+
+
+	->
+		- Its fast
+		- Code reusability
+		- Security
+			- Differecnt Access leve
+			- Abstraction 
+		- Iheritance
+		- Over Riding
+
+
+	class containst 
+		a. Member Function 
+		b. Member variables
+
+	- Blueprint of something
+
+
+	Object is always an instance of a class
+
+
+	
